@@ -7,7 +7,10 @@ scaler = joblib.load("scaler.pkl")
 model = joblib.load("knn_model.pkl")
 expected_columns = joblib.load("columns.pkl")
 print("Scaler expects:", scaler.feature_names_in_)
-st.title(f"Earthquake Alert Prediction 🌍")
+st.title("""
+Earthquake Alert Prediction 🌍
+By Sanskari Coder
+""")
 
 magnitude = st.number_input("Magnitude", 6.0, 8.6, 7.0)
 depth = st.number_input("Depth (km)", 2.0, 670.0, 50.0)
@@ -27,5 +30,6 @@ if st.button("Predict"):
         st.error(f"{prediction} alert")
     else:  # any other color like orange, yellow, blue
         st.warning(f"{prediction.upper()} alert")
+
 
 
