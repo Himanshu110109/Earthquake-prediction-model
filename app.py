@@ -12,11 +12,11 @@ Earthquake Alert Prediction 🌍
 By Sanskari Coder
 """)
 
-magnitude = st.number_input("Magnitude", 6.0, 8.6, 7.0)
-depth = st.number_input("Depth (km)", 2.0, 670.0, 50.0)
-cdi = st.number_input("CDI", 0, 9, 7)
-mmi = st.number_input("MMI", 1, 9, 7)
-sig = st.number_input("Significance", 0, 255, 130)
+magnitude = st.number_input("Magnitude", 6.0, 8.6, 7.5)
+depth = st.number_input("Depth (km)", 2.0, 670.0, 41.0)
+cdi = st.number_input("CDI", 0, 9, 9)
+mmi = st.number_input("MMI", 1, 9, 8)
+sig = st.number_input("Significance", 0, 255, 93)
 
 if st.button("Predict"):
     depth_log = np.log1p(depth)
@@ -30,6 +30,7 @@ if st.button("Predict"):
         st.error(f"{prediction} alert")
     else:  # any other color like orange, yellow, blue
         st.warning(f"{prediction.upper()} alert")
+
 
 
 
